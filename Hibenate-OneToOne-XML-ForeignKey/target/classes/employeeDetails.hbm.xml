@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="com.docsconsole.tutorials.hibernate5.entity">
+
+	<class name="EmployeeDetails" table="employee_details">
+		<id name="empDetId" column="EMP_DET_ID">
+			<generator class="native" />
+		</id>
+		<property name="empPhoneNum" column="EMP_PHONE_NUMBER"></property>
+		<many-to-one name="employee" class="com.docsconsole.tutorials.hibernate5.entity.Employee" not-null="true" column="EMP_ID" unique="true" cascade="all"></many-to-one>
+		
+	</class>
+</hibernate-mapping>
